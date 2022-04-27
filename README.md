@@ -36,12 +36,12 @@ in the next step outside the viewholder we add a new class called setFilter cont
 in the next step, we will replace the new list (filteritem) with the previous list (item) in onBindViewHolder and getItemCount
 ```java
 Model model = filteritem.get(position)
+return filteritem.size();
 ```
 then go to the MainActivity and create an EditText object, then findviewbyid it:
 ```java
 EditText search;
 search = findviewById (R.id.txtsearch);
-return filteritem.size();
 ```
 finally, add the TextChangeListener method to it and put the following code in the on TextChanged section :
 ```java
