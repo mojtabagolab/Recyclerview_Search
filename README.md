@@ -3,7 +3,7 @@
 ---
 in the first step inside the adapter class,create a new list of models **as follows:**
 ```java
-List<ModelName> ObjectName;
+List<ModelName> filteritem;
 ```
 **Notice :** here, for example, we (filteritem) the name of the object 
 in the second step,you must new an ArrayList for the object created from List **as follows:**
@@ -33,7 +33,7 @@ in the next step outside the viewholder we add a new class called setFilter cont
         notifyDataSetChanged();
     }
 ```
-in the next step, we will replace the new list (filteritem) with the previous list (item) in onBindViewHolder
+in the next step, we will replace the new list (filteritem) with the previous list (item) in onBindViewHolder and getItemCount
 ```java
 Model model = filteritem.get(position)
 ```
@@ -41,6 +41,7 @@ then go to the MainActivity and create an EditText object, then findviewbyid it:
 ```java
 EditText search;
 search = findviewById (R.id.txtsearch);
+return filteritem.size();
 ```
 finally, add the TextChangeListener method to it and put the following code in the on TextChanged section :
 ```java
